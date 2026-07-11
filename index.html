@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Dash: Skyway Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Original JavaScript Endless Runner</p>
+        <h1>Neon Dash: Skyway Runner</h1>
+      </div>
+      <button id="soundBtn" class="utility-btn">🔊 Sound</button>
+    </header>
+
+    <section class="hud">
+      <div class="hud-card"><span>Score</span><strong id="score">0</strong></div>
+      <div class="hud-card"><span>Best</span><strong id="best">0</strong></div>
+      <div class="hud-card"><span>Coins</span><strong id="coins">0</strong></div>
+      <div class="hud-card"><span>Distance</span><strong><span id="distance">0</span> m</strong></div>
+      <div class="hud-card"><span>Level</span><strong id="level">1</strong></div>
+      <div class="hud-card mission-card">
+        <span>Mission</span>
+        <strong id="mission">Collect 15 coins</strong>
+      </div>
+    </section>
+
+    <section class="game-shell">
+      <canvas id="game" width="900" height="560"></canvas>
+
+      <div class="boost-panel">
+        <span>ENERGY</span>
+        <div class="boost-track"><div id="boostBar"></div></div>
+      </div>
+
+      <div id="powerStatus" class="power-status"></div>
+
+      <div id="startScreen" class="overlay active">
+        <div class="panel">
+          <div class="hero-icon">🛹</div>
+          <p class="eyebrow">Welcome, Skyway Runner</p>
+          <h2>Ride the Neon Rooftops</h2>
+          <p>
+            Shift lanes, leap over hazards, slide beneath gates, collect energy cells,
+            and survive the ever-changing skyway.
+          </p>
+
+          <div class="instructions">
+            <div><b>Move</b><span>Left / Right</span></div>
+            <div><b>Jump</b><span>Up / W</span></div>
+            <div><b>Slide</b><span>Down / S</span></div>
+            <div><b>Boost</b><span>Space</span></div>
+          </div>
+
+          <button id="startBtn" class="primary-btn">Start Run</button>
+        </div>
+      </div>
+
+      <div id="pauseScreen" class="overlay">
+        <div class="panel small">
+          <div class="hero-icon">⏸️</div>
+          <h2>Run Paused</h2>
+          <p>Your runner is safe. Continue whenever you are ready.</p>
+          <button id="resumeBtn" class="primary-btn">Continue</button>
+        </div>
+      </div>
+
+      <div id="gameOverScreen" class="overlay">
+        <div class="panel small">
+          <div class="hero-icon">🌆</div>
+          <p class="eyebrow">Run Complete</p>
+          <h2 id="gameOverTitle">Great Run!</h2>
+          <p id="gameOverText"></p>
+          <button id="restartBtn" class="primary-btn">Run Again</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="control-row">
+      <button id="pauseBtn" class="utility-btn">⏸ Pause</button>
+      <button id="resetBtn" class="utility-btn">↻ Restart</button>
+    </section>
+
+    <section class="mobile-controls">
+      <button data-action="left">◀</button>
+      <button data-action="jump">▲</button>
+      <button data-action="slide">▼</button>
+      <button data-action="right">▶</button>
+      <button data-action="boost" class="boost-btn">⚡</button>
+    </section>
+
+    <section class="challenge-section">
+      <h2>Weekly Coding Challenges</h2>
+      <div class="challenge-grid">
+        <article><span>01</span><h3>Create a new runner</h3><p>Change the character design and board style.</p></article>
+        <article><span>02</span><h3>Add a new power-up</h3><p>Create a double-score or slow-motion ability.</p></article>
+        <article><span>03</span><h3>Build a new district</h3><p>Add new colours, obstacles, and skyline shapes.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
